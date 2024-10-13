@@ -117,7 +117,8 @@ function handleUpdateBook(book) {
 function handleDeleteBook(bookId) {
     Gbooks = Gbooks.filter(book => book.bookId !== bookId);
     updateLocalStorage('books', Gbooks);
-    RemoveRenderBook(bookId);
+    renderBooks();
+    // RemoveRenderBook(bookId);
 }
 
 function sortAccordintToTitle(arrowElement) {
