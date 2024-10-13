@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Book ERP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="title">
+        <h1>Book Store</h1>
+        <img src="img/book.jpg" alt="book">
+    </div>
+    <div id="main">
+        <div id="toolbar">
+            <button onclick="handleButtonAddBook()">+ New Book</button>
+            <button onclick="loadData()">Load Data</button>
+            <div>English</div>
+        </div>
+        <form onsubmit="handleFormBook(event)" id="add-book-form">
+            <label for="bookId">book ID</label>
+            <input type="text" id="bookId" name="bookId" pattern="\d*" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required>
+            <br>
+            <label for="bookName">Title</label>
+            <input type="text" id="bookName" name="bookName" required>
+            <br>
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            <br>
+            <label for="ratingBook">Rate this book (1 to 5):</label><br>
+            <input type="range" id="ratingBook" name="ratingBook" min="1" max="5" value="3" step="1" oninput="showRating(this.value)">
+            <span id="ratingValue">3</span>
+            <br>
+            <label for="img">Cover img URL</label>
+            <input type="text" id="img" name="img">
+            <br>
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" required>
+            <br>
+            <label for="action">Action</label>
+            <input type="text" id="action" name="action" required>
+
+            <button type="submit" style="cursor: pointer;">Add Book</button>
+        </form>
+        <div id="books-area">
+            <div id="all-books">
+                <table id="table-books">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title <span onclick="sortAccordintToTitle(this)" style="cursor: pointer;">▼</span></th>
+                            <th>price <span onclick="sortAccordingToPrice(this)" style="cursor: pointer;">▲</span></th>
+                            <th>action</th>
+                            <th>update</th>
+                            <th>delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-books">
+                    </tbody>
+                </table>
+                <div id="navBetwwenTable">
+                    <button id="prevPageButton" onclick="previousPage()">&lt;</button>
+                    <div id="this-page">1</div>
+                    <div>&nbsp;of&nbsp;</div>
+                    <div id="count-pages">5</div>
+                    <button id="nextPageButton" onclick="nextPage()">&gt;</button>
+                </div>
+            </div>
+        <div class="curr-book"></div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="books.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/util.js"></script>
+</body>
+
+</html>
+

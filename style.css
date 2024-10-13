@@ -1,0 +1,150 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(252, 233, 209);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title h1 {
+    margin: 1rem;
+    padding-right: 2rem;
+    font-size: 3.5rem;
+}
+
+#title img {
+    width: 10rem;
+    margin: 1rem;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+#toolbar {
+    background-color: rgb(151, 69, 229);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#toolbar button {
+    margin: 0.5rem;
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 0.3rem;
+    background-color: rgb(226, 173, 104);
+    cursor: pointer;
+}
+
+#toolbar div {
+    margin: 0.5rem;
+    padding: 0.3rem;
+}
+
+#books-area {
+    background-color: rgb(226, 173, 104);
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-grow: 1;
+}
+
+#garbage_icon {
+    width: 1.4rem;
+}
+
+#add-book-form {
+    display: none;
+    background-color: greenyellow;
+    position: absolute;
+    left: 26%;
+    top: 40%;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
+#table-books {
+    background-color: rgb(215, 139, 85);
+    margin: 1rem 1rem 8rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr 2fr 1fr;
+}
+
+#table-books thead, #table-books tbody, #table-books tr{
+    display: contents;
+}
+
+#table-books th, #table-books td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center
+}
+
+.curr-book {
+    margin: 1rem;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.curr-book img {
+    width: 210px; 
+    height: 280px;
+    object-fit: cover; 
+}
+
+#details-curr-book {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#all-books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#navBetwwenTable {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#navBetwwenTable button {
+    background-color: rebeccapurple;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-radius: 10%;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#navBetwwenTable #prevPageButton {
+    margin-right: 1rem;
+}
+
+#navBetwwenTable #nextPageButton {
+    margin-left: 1rem;
+}
