@@ -139,6 +139,7 @@ body {
     border-radius: 10%;
     font-weight: bold;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 #navBetwwenTable #prevPageButton {

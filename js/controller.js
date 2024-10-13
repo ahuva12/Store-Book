@@ -84,7 +84,8 @@ function addBook(newBook) {
         alert(`A book with this ID already exists. I entered id ${Gbooks.length + 1}.`);
     }
     Gbooks.push(newBook);
-    renderNewBookToDisplay(getDivBook(newBook));
+    renderBooks();
+    // renderNewBookToDisplay(getDivBook(newBook));
 }
 
 function updateBook(updatedBook) {
@@ -164,6 +165,9 @@ function updateRating(spanStar) {
 }
 
 function nextPage() {
+    if (currentPage === 1) {
+        updateNavigationButton('prevPageButton', false);
+    }
     if (currentPage < Math.ceil(Gbooks.length / booksPerPage)) {
         currentPage++;
         updateNavigationButton('nextPageButton', false);
@@ -175,6 +179,9 @@ function nextPage() {
 }
 
 function previousPage() {
+    if (currentPage === Math.ceil(Gbooks.length / booksPerPage)) {
+        updateNavigationButton('nextPageButton', false);
+    }
     if (currentPage > 1) {
         currentPage--;
         updateNavigationButton('prevPageButton', false);
