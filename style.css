@@ -43,6 +43,7 @@ body {
     justify-content: start;
     align-items: center;
     font-weight: bold;
+    padding-left: 2rem;
 }
 
 #toolbar button {
@@ -95,7 +96,7 @@ body {
 
 #table-books th, #table-books td {
     border: 1px solid black;
-    padding: 8px;
+    padding: 12px;
     text-align: center
 }
 
